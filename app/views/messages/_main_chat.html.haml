@@ -1,21 +1,21 @@
 .chat-main
   .chat-main__group-info
-    .chat-main__left-box
-      .chat-main__left-box__current-grop
+    .left-box
+      .left-box__current-grop
         test
-      .chat-main__left-box__member-list
+      .left-box__member-list
         Member:test
-    .chat-main__edit-btn
+    .edit-btn
       = link_to '#' do
         Edit
   .chat-main__messages
     .chat-main__message
-      .chat-main__message__upper-info
-        .chat-main__message__upper-info__talker
+      .upper-info
+        .upper-info__talker
           test
-        .chat-main__message__upper-info__dete
+        .upper-info__dete
           2020/07/23(thu) 22:00
-      .message__text
+      .text
         aaa
   .form
     %form.new_message
