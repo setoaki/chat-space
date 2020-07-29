@@ -4,14 +4,17 @@
       .name
         = current_user.name
       .icons
-        .icons__edit
-          = link_to '#' do
-            %i.fa.fa-edit
         .icons__new
+          = link_to new_group_path do
+            %i.fa.fa-edit
+        .icons__edit
           = link_to edit_user_path(current_user) do
             %i.fa.fa-cog
   .side-bar__group-list
-    .name
-      test
-    .message
-      まだメッセージがありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            = group.name
+          .group__message
+            まだメッセージがありません
