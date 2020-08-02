@@ -46,16 +46,21 @@
   &__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    color: white;
-    padding: 20px 20px 0;
-    
-    .name{
-      font-size: 15px;
-      margin-bottom: 5px;
+    padding: 0 20px ;
+        a{
+      color: white;
     }
+    .group{
+      box-sizing: border-box;
+      padding: 20px 0 40px;
+      &__name{
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
     
-    .message{
-      font-size: 11px;
+      &__message{
+        font-size: 11px;
+      }
     }
   }
 }  
