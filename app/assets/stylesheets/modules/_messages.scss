@@ -107,6 +107,7 @@
     background-color: #fafafa;
     height: calc(100vh - 190px);
     padding: 35px 40px;
+    overflow: scroll;
       
     &__message{
       padding-bottom: 46px;
@@ -137,23 +138,29 @@
 }
     
      
-    .form{
+.form{
   height: 90px;
   background-color: #d2d2d2;
   padding: 20px 40px;
+  
   .new_message{
     display: flex;
+    .form__mask {
+      position: relative;
+    }
     .input-box {
       display: flex;
       width: 100%;
       position: relative;
       &__text {
+        
         height: 50px;
         width: 100%;
         color: #434A54;
         border-style: none;
         padding: 0 40px 0 10px;
       }
+      
       &__image {
         position: absolute;
         top: 10px;
@@ -163,6 +170,7 @@
 
         &__file{
           display: none;
+
         }
       }
     }

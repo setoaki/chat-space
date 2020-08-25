@@ -2,26 +2,25 @@
   .chat-main__group-info
     .left-box
       .left-box__current-grop
-        test
+        = @group.name
       .left-box__member-list
-        Member:test
+        Member:
+        - @group.users.each do |user|
+          = user.name
     .edit-btn
-      = link_to '#' do
+      = link_to edit_group_path(@group.id) do
         Edit
+  
   .chat-main__messages
-    .chat-main__message
-      .upper-info
-        .upper-info__talker
-          test
-        .upper-info__dete
-          2020/07/23(thu) 22:00
-      .text
-        aaa
+    = render @messages
+
+
   .form
-    %form.new_message
-      .input-box
-        %input{type: "text",class: "input-box__text",placeholder: "type a message"}
-        %ladel{class: "input-box__image"}
-          = icon('far','image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btm"}
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'input-box__image' do
+          = icon('fas', 'image', class: 'icon')
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btm'
+
