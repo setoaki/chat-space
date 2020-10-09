@@ -1,5 +1,4 @@
 $(function(){ 
-  //console.log(last_message_id);  
   function buildHTML(message){
    if ( message.image ) {
      var html =
@@ -83,7 +82,6 @@ var reloadMessages = function() {
         $.each(messages, function(i, message) {
           insertHTML += buildHTML(message)
         });
-        //メッセージが入ったHTMLに、入れ物ごと追加
         $('.chat-main__messages').append(insertHTML);
   
         $('.chat-main__messages').animate({ scrollTop: $('.chat-main__messages')[0].scrollHeight});
